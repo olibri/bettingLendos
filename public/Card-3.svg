@@ -1,0 +1,43 @@
+<svg width="328" height="398" viewBox="0 0 328 398" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="328" height="398" rx="20" fill="#101010"/>
+<rect width="328" height="398" rx="20" fill="url(#pattern0_1_369)"/>
+<defs>
+<pattern id="pattern0_1_369" patternUnits="userSpaceOnUse" patternTransform="matrix(328 0 0 398 0 0)" preserveAspectRatio="none" viewBox="0 0 328 398" width="1" height="1">
+<g id="pattern0_1_369_inner">
+<g clip-path="url(#clip0_1_369)">
+<rect width="328" height="398" fill="#191919"/>
+<circle cx="23" cy="20" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="70" cy="20" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="117" cy="20" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="164" cy="20" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="211" cy="20" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="258" cy="20" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="305" cy="20" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="23" cy="61" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="70" cy="61" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="117" cy="61" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="164" cy="61" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="211" cy="61" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="258" cy="61" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="305" cy="61" r="2" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle cx="23" cy="102" r="2" fill="#D9D9D9" fill-opacity="0.1"/>
+<circle cx="70" cy="102" r="2" fill="#D9D9D9" fill-opacity="0.1"/>
+<circle cx="117" cy="102" r="2" fill="#D9D9D9" fill-opacity="0.1"/>
+<circle cx="164" cy="102" r="2" fill="#D9D9D9" fill-opacity="0.1"/>
+<circle cx="211" cy="102" r="2" fill="#D9D9D9" fill-opacity="0.1"/>
+<circle cx="258" cy="102" r="2" fill="#D9D9D9" fill-opacity="0.1"/>
+<circle cx="305" cy="102" r="2" fill="#D9D9D9" fill-opacity="0.1"/>
+<circle cx="23" cy="143" r="2" fill="#D9D9D9" fill-opacity="0.04"/>
+<circle cx="70" cy="143" r="2" fill="#D9D9D9" fill-opacity="0.04"/>
+<circle cx="117" cy="143" r="2" fill="#D9D9D9" fill-opacity="0.04"/>
+<circle cx="164" cy="143" r="2" fill="#D9D9D9" fill-opacity="0.04"/>
+<circle cx="211" cy="143" r="2" fill="#D9D9D9" fill-opacity="0.04"/>
+<circle cx="258" cy="143" r="2" fill="#D9D9D9" fill-opacity="0.04"/>
+<circle cx="305" cy="143" r="2" fill="#D9D9D9" fill-opacity="0.04"/>
+</g>
+</g>
+</pattern><clipPath id="clip0_1_369">
+<rect width="328" height="398" fill="white"/>
+</clipPath>
+</defs>
+</svg>
