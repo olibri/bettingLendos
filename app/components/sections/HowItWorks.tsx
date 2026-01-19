@@ -12,7 +12,7 @@ const HowItWorks = () => {
       </p>
       <Step n={1} />
 
-      <p className=' my-[70px] text-[64px] text-[#F0F0F0] font-semibold font-schibsted tracking-[-2%]'>
+      <p className='mb-[70px] text-[64px] text-[#F0F0F0] font-semibold font-schibsted tracking-[-2%]'>
         Choose market
       </p>
       <div className='flex flex-row items-start gap-[100px]'>
