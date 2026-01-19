@@ -1,8 +1,16 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import InputActionRow from '../ui/InputActionRow'
 
 const HeroSection = () => {
+  const handleScrollClick = () => {
+    const target = document.querySelector('#about')
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <div>
       <div className='flex flex-col items-center justify-center custom-container'>
@@ -14,7 +22,7 @@ const HeroSection = () => {
         </p>
       </div>
       <div className='relative flex flex-col w-full items-center bg-[url("/Group2147258271.png")] lg:bg-[url("/Group2147258273.png")] min-h-[300px] lg:min-h-[500px] bg-cover bg-center justify-center overflow-hidden rounded-3xl'>
-        <div className='relative z-10 flex w-full flex-col items-center justify-center gap-4 mb-15 px-5 lg:px-0'>
+        <div className='relative z-10 flex w-full flex-col items-center justify-center gap-4 px-5 lg:px-0'>
           <InputActionRow
             placeholder='Sign wallet'
             buttonText='Connect Wallet'
@@ -26,16 +34,19 @@ const HeroSection = () => {
             buttonClassName='bg-[#F0F0F033] text-[#F0F0F0]'
           />
         </div>
-        <div className='flex flex-col items-center justify-center cursor-pointer animate-bounce'>
-          <Image
-            src="/chevron-down-double.svg"
-            alt="arrows"
-            width={24}
-            height={24}
-            className=''
-          />
-          <p  className='text-[#6C6E74] text-[16px]'>Scroll</p>
-        </div>
+      </div>
+      <div 
+        onClick={handleScrollClick}
+        className='flex flex-col items-center justify-center cursor-pointer animate-bounce mb-10 lg:mb-20'
+      >
+        <Image
+          src="/chevron-down-double.svg"
+          alt="arrows"
+          width={24}
+          height={24}
+          className=''
+        />
+        <p className='text-[#6C6E74] text-[16px]'>Scroll</p>
       </div>
     </div>
   )
