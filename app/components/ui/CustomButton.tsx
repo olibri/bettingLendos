@@ -9,7 +9,7 @@ const CustomButton = ({ text, className }: CustomButtonProps) => {
   return (
     <button
       className={clsx(
-        'h-[45px] rounded-[10px] text-[18px] font-dm-sans font-medium transition-opacity hover:opacity-90',
+        'h-[45px] rounded-[10px] text-[14px] ld:text-[18px] font-dm-sans font-medium transition-opacity hover:opacity-90',
         className,
       )}
     >

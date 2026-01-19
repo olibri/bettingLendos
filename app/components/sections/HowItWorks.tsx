@@ -71,18 +71,18 @@ const HowItWorks = () => {
 
   return (
     <div className='flex flex-col mb-[120px]'>
-      <p className='text-[64px] mb-[70px] text-[#F0F0F0] text-center tracking-[-2%] font-semibold font-schibsted leading-[100%]'>
+      <p className='text-[32px] lg:text-[64px] mb-[70px] text-[#F0F0F0] text-center tracking-[-2%] font-semibold font-schibsted leading-[100%]'>
         How it works/<br />
         Game mechanics
       </p>
       <Step n={1} />
 
-      <p className='mb-[70px] text-[64px] text-[#F0F0F0] font-semibold font-schibsted tracking-[-2%]'>
+      <p className='mb-[20px] lg:mb-[70px] text-[32px] lg:text-[64px] text-[#F0F0F0] font-semibold font-schibsted tracking-[-2%]'>
         Choose market
       </p>
-      <div className='flex flex-row items-start gap-[100px]'>
+      <div className='flex flex-col-reverse lg:flex-row items-start gap-[50px] lg:gap-[100px]'>
         <div className='flex-1 flex flex-col gap-4'>
-          <div className='rounded-[20px] p-[32px] flex flex-col custom-border'>
+          <div className='rounded-[20px] p-6 lg:p-[32px] flex flex-col custom-border'>
             <div className='flex flex-row items-center gap-1 mb-5'>
               <Circle />
               <p className='text-[18px] text-[#6C6E74]'>Live Market Price</p>
@@ -94,9 +94,9 @@ const HowItWorks = () => {
               {priceDisplay}
               <span className='relative text-[16px] text-[#6C6E74] tracking-[-3%]'>USDT</span>
             </p>
-            <div className='flex flex-row items-end justify-between'>
+            <div className='flex flex-col lg:flex-row lg:items-end justify-between'>
               <div
-                className={`flex items-center justify-center gap-1.5 rounded-[100px] h-[33px] px-[25px] border ${isPositiveChange
+                className={`flex items-center justify-center gap-1.5 rounded-[100px] mb-[54px] lg:mb-0 h-[33px] px-[25px] w-fit border ${isPositiveChange
                     ? 'border-[#108B68] bg-[#108B682E] text-[#108B68]'
                     : 'border-[#8B1410] bg-[#8B14102E] text-[#8B1410]'
                   }`}
@@ -111,33 +111,33 @@ const HowItWorks = () => {
                   height={18}
                 />
               </div>
-              <p className='text-[18px] text-[#6C6E74]'>
+              <p className='text-[18px] text-[#6C6E74] self-end'>
                 Updated in real time
               </p>
             </div>
           </div>
-          <div className='border border-[#F0F0F01A] p-[32px] flex flex-col rounded-[20px]'>
+          <div className='border border-[#F0F0F01A] p-6 lg:p-[32px] flex flex-col rounded-[20px]'>
             <p className='text-[18px] text-[#6C6E74] font-medium'>⚡ Real Exchange Data</p>
-            <p className='text-[18px] text-[#F0F0F0] mb-3 mt-5 font-medium'>Prices are streamed in real time directly from major cryptocurrency exchanges, reflecting actual market conditions at every moment.</p>
+            <p className='text-[18px] text-[#F0F0F0] mt-5 font-medium mb-[24px] lg:mb-3'>Prices are streamed in real time directly from major cryptocurrency exchanges, reflecting actual market conditions at every moment.</p>
             <p className='text-[18px] text-[#6C6E74] text-right'>
               Updated in real time
             </p>
           </div>
         </div>
         <div className='flex-1'>
-          <p className='text-[#6C6E74] text-[24px] tracking-[-3%] leading-[120%] font-medium mb-[70px]'>
+          <p className='text-[#6C6E74] text-[16px] lg:text-[24px] tracking-[-3%] leading-[120%] font-medium mb-[24px] lg:mb-[70px]'>
             Select a market based on real cryptocurrency trading pairs. All prices are pulled live from exchanges and update continuously.
             This means every decision you make reflects the real state of the market at that moment.
           </p>
 
-          <div className='flex flex-row items-center gap-3 justify-center'>
+          <div className='flex flex-row items-center gap-1.5 lg:gap-3 justify-center'>
             {primaryPairs.map((symbol, index) => {
               const isActive = symbol === selectedPair
               return (
                 <button
                   key={symbol}
                   onClick={() => handleSelectPair(symbol)}
-                  className={`h-[50px] w-full text-[18px] font-medium transition-colors ${isActive
+                  className={`h-[50px] w-full text-[14px] lg:text-[18px] font-medium transition-colors ${isActive
                       ? 'bg-[linear-gradient(258.97deg,#B590E7_-9.97%,#724AAF_94.32%)] text-[#F0F0F0] shadow-[0_10px_30px_rgba(145,110,243,0.35)]'
                       : 'bg-[#191919] text-[#F0F0F0] hover:bg-[#232323]'
                     } ${index === 0
@@ -150,7 +150,7 @@ const HowItWorks = () => {
             })}
             <button
               onClick={handleSelectOther}
-              className={`h-[50px] w-full text-[18px] font-medium transition-colors rounded-tr-[25px] rounded-br-[25px] ${isOtherActive
+              className={`h-[50px] w-full text-[14px] lg:text-[18px] font-medium transition-colors rounded-tr-[25px] rounded-br-[25px] ${isOtherActive
                   ? 'bg-[linear-gradient(258.97deg,#B590E7_-9.97%,#724AAF_94.32%)] text-[#F0F0F0] shadow-[0_10px_30px_rgba(145,110,243,0.35)]'
                   : 'bg-[#191919] text-[#F0F0F0] hover:bg-[#232323]'
                 }`}

@@ -20,7 +20,7 @@ const InputActionRow = ({
   return (
     <div
       className={clsx(
-        'flex w-full max-w-130 items-center gap-3 rounded-[12px] bg-[#101010] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.45)]',
+        'flex w-full max-w-full lg:max-w-130 items-center gap-3 rounded-[12px] bg-[#101010] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.45)]',
         containerClassName,
       )}
     >
@@ -28,10 +28,10 @@ const InputActionRow = ({
         type="text"
         placeholder={placeholder}
         readOnly={readOnly}
-        className='flex-1 rounded-[10px] bg-transparent px-3 text-[#F0F0F099] placeholder:text-[#6C6E74] focus:outline-none'
+        className='w-[50%] lg:w-full bg-transparent px-3 text-[#F0F0F099] placeholder:text-[#6C6E74] focus:outline-none'
       />
       <CustomButton
-        className={clsx('w-[200px]', buttonClassName)}
+        className={clsx('w-[50%] lg:w-[200px]', buttonClassName)}
         text={buttonText}
       />
     </div>

@@ -33,13 +33,13 @@ const WhyItMatters = () => {
   return (
     <section className='flex flex-col gap-10 mb-[120px]'>
       <Step text="Why it matters" />
-      <p className='text-[64px] text-[#F0F0F0] font-semibold font-schibsted tracking-[-2%] leading-[100%] mb-[70px]'>
+      <p className='text-[32px] lg:text-[64px] text-[#F0F0F0] font-semibold font-schibsted tracking-[-2%] leading-[100%] lg:mb-[70px]'>
         Why this is different/<br />Trust & Edge
       </p>
 
       <div className='grid gap-6 md:grid-cols-4'>
         {highlights.map((item) => (
-          <article key={item.label} className='dot-card flex flex-col justify-between gap-5 p-8 text-left text-[#F0F0F0]'>
+          <article key={item.label} className='dot-card flex flex-col justify-between gap-5 p-6 lg:p-8 text-left text-[#F0F0F0]'>
             <div>
               <Image
                 src={`/${item.img}`}
@@ -48,7 +48,7 @@ const WhyItMatters = () => {
                 height={66}
                 className='mb-4'
               />
-              <p className='mt-[67px] text-[32px] text-[#F0F0F0] font-semibold'>
+              <p className='mt-[67px] text-[24px] lg:text-[32px] text-[#F0F0F0] font-semibold'>
                 {item.title}
               </p>
             </div>
