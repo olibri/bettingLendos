@@ -31,7 +31,7 @@ const highlights = [
 
 const WhyItMatters = () => {
   return (
-    <section className='flex flex-col gap-10'>
+    <section className='flex flex-col gap-10 mb-[120px]'>
       <Step text="Why it matters" />
       <p className='text-[64px] text-[#F0F0F0] font-semibold font-schibsted tracking-[-2%] leading-[100%] mb-[70px]'>
         Why this is different/<br />Trust & Edge

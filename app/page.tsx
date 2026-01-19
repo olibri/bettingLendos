@@ -6,6 +6,7 @@ import PickTimeframe from "./components/sections/PickTimeframe";
 import EventType from "./components/sections/EventType";
 import ResultSection from "./components/sections/ResultSection";
 import WhyItMatters from "./components/sections/WhyItMatters";
+import StartPredicting from "./components/sections/StartPredicting";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <EventType />
         <ResultSection />
         <WhyItMatters />
+        <StartPredicting />
       </main>
     </div>
   );
