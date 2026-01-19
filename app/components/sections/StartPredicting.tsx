@@ -4,7 +4,7 @@ import CustomButton from '../ui/CustomButton'
 
 const StartPredicting = () => {
   return (
-    <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+    <div className='mb-[120px] relative h-[800px] w-full'>
       <DotGrid
         dotSize={2}
         gap={15}

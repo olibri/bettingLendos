@@ -7,6 +7,7 @@ import EventType from "./components/sections/EventType";
 import ResultSection from "./components/sections/ResultSection";
 import WhyItMatters from "./components/sections/WhyItMatters";
 import StartPredicting from "./components/sections/StartPredicting";
+import Footer from "./components/sections/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <WhyItMatters />
         <StartPredicting />
       </main>
+      <Footer />
     </div>
   );
 }
