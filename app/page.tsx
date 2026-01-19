@@ -12,13 +12,21 @@ import Footer from "./components/sections/Footer";
 export default function Home() {
   return (
     <div className="bg-[#010101]">
-      <TopSection />
+      <section id="home">
+        <TopSection />
+      </section>
       <main className="custom-container">
-        <HowItWorks />
-        <PickTimeframe />
-        <EventType />
-        <ResultSection />
-        <WhyItMatters />
+        <section id="about">
+          <HowItWorks />
+        </section>
+        <section id="game-mechanics">
+          <PickTimeframe />
+          <EventType />
+          <ResultSection />
+        </section>
+        <section id="trust-edge">
+          <WhyItMatters />
+        </section>
         <StartPredicting />
       </main>
       <Footer />

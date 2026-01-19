@@ -90,7 +90,7 @@ body {
     border: 1px solid transparent;
     border-radius: 20px;
     background:
-      linear-gradient(#050505, #050505) padding-box,
+      linear-gradient(#010101, #010101) padding-box,
       radial-gradient(123.53% 154.69% at 23.66% 20.41%, #389FF3 0%, #A46CFF 100%) border-box;
     background-clip: padding-box, border-box;
   }

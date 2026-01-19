@@ -1,11 +1,10 @@
+"use client"
+
 import React from 'react'
 import CustomButton from '../ui/CustomButton'
+import { navigationLinks } from '../../data/navigationLinks'
 
 const footerColumns = [
-  {
-    title: 'Navigation',
-    links: ['Home', 'About Us', 'Game Mechanics', 'Trust & Edge'],
-  },
   {
     title: 'Legal',
     links: ['Privacy Policy', 'Terms of Service'],
@@ -17,6 +16,14 @@ const footerColumns = [
 ]
 
 const Footer = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const target = document.querySelector(href)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <footer className='relative flex items-center justify-center mt-40 border-t border-[#232323] px-10 py-14 text-[#F0F0F0]'>
       <div className='custom-container flex flex-row gap-15 items-start justify-between w-full'>
@@ -28,7 +35,23 @@ const Footer = () => {
           <CustomButton text='Join Waitlist' className='w-[200px] bg-[#F0F0F0] text-[#010101]' />
         </div>
 
-        <div className='grid flex-2 md:grid-cols-3'>
+        <div className='grid flex-2 md:grid-cols-3 gap-10'>
+          <div className='space-y-4'>
+            <p className='text-[18px] font-semibold text-[#6C6E74]'>Navigation</p>
+            <ul className='space-y-3 text-[18px] text-[#F0F0F0] font-medium'>
+              {navigationLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className='transition-opacity hover:opacity-80'
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
           {footerColumns.map((column) => (
             <div key={column.title} className='space-y-4'>
               <p className='text-[18px] font-semibold text-[#6C6E74]'>{column.title}</p>
