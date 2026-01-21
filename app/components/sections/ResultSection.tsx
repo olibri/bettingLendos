@@ -1,9 +1,13 @@
+"use client"
+
 import React from 'react'
 import Step from '../ui/Step'
-import Image from 'next/image'
 import CustomButton from '../ui/CustomButton'
+import { useWhitelist } from '../../context/WhitelistContext'
 
 const ResultSection = () => {
+  const { openWhitelistModal } = useWhitelist()
+
   return (
     <div className='mb-[120px]'>
       <Step n={4} />
@@ -44,6 +48,7 @@ const ResultSection = () => {
           <CustomButton
             text="Join Waitlist"
             className='bg-[#F0F0F0] w-full lg:w-[140px] text-[#010101]'
+            onClick={openWhitelistModal}
           />
         </div>
       </div>

@@ -1,13 +1,45 @@
 "use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import InputActionRow from '../ui/InputActionRow'
+import { joinWhitelist } from '../../services/whitelistApi'
 
 const HeroSection = () => {
+  const [email, setEmail] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
+
   const handleScrollClick = () => {
     const target = document.querySelector('#about')
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const handleJoinWaitlist = async () => {
+    if (!email) {
+      setMessage({ type: 'error', text: 'Please enter your email' })
+      return
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      setMessage({ type: 'error', text: 'Please enter a valid email' })
+      return
+    }
+
+    setIsLoading(true)
+    setMessage(null)
+
+    const result = await joinWhitelist(email)
+
+    setIsLoading(false)
+
+    if (result.success) {
+      setMessage({ type: 'success', text: "You're on the list! 🎉" })
+      setEmail('')
+    } else {
+      setMessage({ type: 'error', text: result.error || 'Something went wrong' })
     }
   }
 
@@ -30,9 +62,19 @@ const HeroSection = () => {
           />
           <InputActionRow
             placeholder='Email'
-            buttonText='Join Wishlist'
+            buttonText={isLoading ? 'Joining...' : 'Join Waitlist'}
             buttonClassName='bg-[#F0F0F033] text-[#F0F0F0]'
+            readOnly={false}
+            value={email}
+            onChange={setEmail}
+            onButtonClick={handleJoinWaitlist}
+            type='email'
           />
+          {message && (
+            <p className={`text-sm ${message.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+              {message.text}
+            </p>
+          )}
         </div>
       </div>
       <div 

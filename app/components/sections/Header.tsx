@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from 'react'
 import CustomButton from '../ui/CustomButton'
 import { navigationLinks } from '../../data/navigationLinks'
+import { useWhitelist } from '../../context/WhitelistContext'
 
 const Header = () => {
   const [selected, setSelected] = useState<string>(navigationLinks[0]?.label ?? '')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { openWhitelistModal } = useWhitelist()
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -61,6 +63,7 @@ const Header = () => {
           <CustomButton
             className='w-[200px] bg-[#F0F0F0] text-[#010101]'
             text="Join Waitlist"
+            onClick={openWhitelistModal}
           />
         </div>
 
@@ -147,6 +150,7 @@ const Header = () => {
             <CustomButton
               className='w-full bg-[#F0F0F0] text-[#010101]'
               text="Join Waitlist"
+              onClick={openWhitelistModal}
             />
           </div>
         </div>

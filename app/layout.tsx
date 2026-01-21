@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Schibsted_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { WhitelistProvider } from "./context/WhitelistContext";
 
 const schibstedGrotesk = Schibsted_Grotesk({
   variable: "--font-schibsted-grotesk",
@@ -70,7 +71,9 @@ export default function RootLayout({
       <body
         className={`${schibstedGrotesk.variable} ${dmSans.variable} antialiased`}
       >
-        {children}
+        <WhitelistProvider>
+          {children}
+        </WhitelistProvider>
       </body>
     </html>
   );
