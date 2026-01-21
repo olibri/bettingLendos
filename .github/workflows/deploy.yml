@@ -63,10 +63,6 @@ jobs:
           username: root
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            # Login to GitHub Container Registry
-            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u olibri --password-stdin
-            
-            # Navigate to app directory
             cd /opt/expiryx-landing
             
             # Pull the latest image
