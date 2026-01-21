@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  expiryx-landing:
+    image: ghcr.io/${GITHUB_REPOSITORY:-expiryx/expiryx-landing}:${IMAGE_TAG:-latest}
+    container_name: expiryx-landing
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - expiryx-network
+
+networks:
+  expiryx-network:
+    driver: bridge
