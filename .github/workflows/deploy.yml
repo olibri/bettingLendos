@@ -68,9 +68,9 @@ jobs:
             # Pull the latest image
             docker pull ghcr.io/olibri/bettinglendos:latest
             
-            # Restart with docker-compose
-            docker-compose down || true
-            docker-compose up -d
+            # Restart with docker compose
+            docker compose down || true
+            docker compose up -d
             
             # Clean up old images
             docker image prune -f
