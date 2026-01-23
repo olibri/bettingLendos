@@ -14,14 +14,13 @@ const PickTimeframe = () => {
       <div className='text-[#F0F0F0] text-[18px] lg:text-[32px] text-center font-medium tracking-[-3%] w-full mb-[60px] leading-[100%]'>
         Choose how long the market will move <CustomColorText>
           before your <br /> result is settled.
-        </CustomColorText>
-        Different timeframes change the <br />
+        </CustomColorText> Different timeframes change the <br />
         <CustomColorText> pace and strategy</CustomColorText> of the game.
       </div>
 
       <div className='hidden lg:block'>
         <Image
-          src="/Group2147258269.png"
+          src="/Group 1-3.svg"
           alt="Pick Timeframe Illustration"
           width={1400}
           height={1400}
@@ -30,7 +29,7 @@ const PickTimeframe = () => {
       </div>
       <div className='lg:hidden w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]'>
         <Image
-          src="/Group 2147258274.png"
+          src="/Group 2147258269.svg"
           alt="Pick Timeframe Illustration"
           width={1400}
           height={1400}

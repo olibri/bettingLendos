@@ -64,7 +64,7 @@ const WhitelistModal = ({ isOpen, onClose }: WhitelistModalProps) => {
       />
 
       {/* Modal */}
-      <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md p-6">
+      <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md">
         <div className="bg-[#101010] border border-[#232323] rounded-2xl p-8 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
           {success ? (
             <div className="text-center">
@@ -131,7 +131,7 @@ const WhitelistModal = ({ isOpen, onClose }: WhitelistModalProps) => {
 
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 text-[#6C6E74] hover:text-[#F0F0F0] transition-colors"
+                className="absolute top-[10px] right-[10px] text-[#6C6E74] hover:text-[#F0F0F0] transition-colors cursor-pointer"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

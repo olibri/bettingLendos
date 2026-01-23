@@ -12,8 +12,8 @@ const ResultSection = () => {
     <div className='mb-[120px]'>
       <Step n={4} />
 
-      <div className='flex flex-col-reverse lg:flex-row items-center'>
-        <div className='flex-3'>
+      <div className='flex flex-col-reverse lg:gap-10 lg:flex-row items-center'>
+        <div className='flex-2'>
           <video
             src="/Video Project 3.mp4"
             autoPlay
