@@ -3,17 +3,21 @@
 # =========================
 FROM node:20-alpine AS deps
 
-# Необхідно для деяких npm пакетів
-RUN apk add --no-cache libc6-compat python3 make g++ bash
+# Build tools для native модулів
+RUN apk add --no-cache \
+    libc6-compat \
+    python3 \
+    make \
+    g++ \
+    bash \
+    linux-headers
 
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
 
-# ВАЖЛИВО:
-# npm ci виконується без build tools,
-# бо native usb не повинен збиратися
-RUN npm ci --omit=optional
+# npm ci зіб’є підзалежності, включно з usb
+RUN npm ci
 
 # =========================
 # Stage 2: Builder
@@ -22,11 +26,13 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Копіюємо встановлені node_modules з deps
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# Build-time environment variables
 ARG NEXT_PUBLIC_API_URL=https://betkalendingbackend-production.up.railway.app
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 
