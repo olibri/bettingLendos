@@ -63,7 +63,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Створюємо та даємо права на .next
-RUN mkdir .next && chown nextjs:nodejs .next
+RUN chown -R nextjs:nodejs .next
 
 USER nextjs
 
