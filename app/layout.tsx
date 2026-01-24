@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     images: ["/1766166390711.jpeg"],
   },
   icons: {
-    icon: "/Frame 2147258268.svg",
-    shortcut: "/Frame 2147258268.svg",
-    apple: "/Frame 2147258268.svg",
+    icon: "/candles_blue 5.svg",
+    shortcut: "/candles_blue 5.svg",
+    apple: "/candles_blue 5.svg",
   },
   robots: {
     index: true,
