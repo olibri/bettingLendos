@@ -3,7 +3,7 @@
 import React from 'react'
 import CustomButton from '../ui/CustomButton'
 import { navigationLinks } from '../../data/navigationLinks'
-import { useWhitelist } from '../../context/WhitelistContext'
+import { scrollToHome } from '@/app/utils/scrollToWhiteList'
 
 const footerColumns = [
   {
@@ -17,7 +17,6 @@ const footerColumns = [
 ]
 
 const Footer = () => {
-  const { openWhitelistModal } = useWhitelist()
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
@@ -35,7 +34,7 @@ const Footer = () => {
           <p className='text-[#9A9CA3] text-[18px] leading-[150%]'>
             Transparent, skill-driven market predictions<br /> powered by real exchange prices.
           </p>
-          <CustomButton text='Join Waitlist' className='w-[200px] bg-[#F0F0F0] text-[#010101]' onClick={openWhitelistModal} />
+          <CustomButton text='Join Waitlist' className='w-[200px] bg-[#F0F0F0] text-[#010101]' onClick={() => scrollToHome()} />
         </div>
 
         {/* Desktop Layout */}

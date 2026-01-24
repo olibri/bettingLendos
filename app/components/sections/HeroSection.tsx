@@ -1,6 +1,8 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useWalletModal } from '@solana/wallet-adapter-react-ui'
 import InputActionRow from '../ui/InputActionRow'
 import { joinWhitelist } from '../../services/whitelistApi'
 
@@ -8,6 +10,21 @@ const HeroSection = () => {
   const [email, setEmail] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
+  
+  // Wallet connection
+  const { publicKey, disconnect } = useWallet()
+  const { setVisible } = useWalletModal()
+  const walletAddress = publicKey?.toBase58()
+
+  const handleConnectWallet = () => {
+    if (walletAddress) {
+      // If already connected, disconnect
+      disconnect()
+    } else {
+      // Open wallet selection modal
+      setVisible(true)
+    }
+  }
 
   const handleScrollClick = () => {
     const target = document.querySelector('#about')
@@ -22,6 +39,11 @@ const HeroSection = () => {
       return
     }
 
+    if (!walletAddress) {
+      setMessage({ type: 'error', text: 'Please connect your wallet' })
+      return
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       setMessage({ type: 'error', text: 'Please enter a valid email' })
@@ -31,7 +53,7 @@ const HeroSection = () => {
     setIsLoading(true)
     setMessage(null)
 
-    const result = await joinWhitelist(email)
+    const result = await joinWhitelist(email, walletAddress || '')
 
     setIsLoading(false)
 
@@ -56,9 +78,10 @@ const HeroSection = () => {
       <div className='relative flex flex-col w-full items-center bg-[url("/Group2147258271.png")] lg:bg-[url("/Group2147258273.png")] min-h-[300px] lg:min-h-[500px] bg-cover bg-center justify-center overflow-hidden rounded-3xl'>
         <div className='relative z-10 flex w-full flex-col items-center justify-center gap-4 px-5 lg:px-0'>
           <InputActionRow
-            placeholder='Sign wallet'
-            buttonText='Connect Wallet'
+            placeholder={walletAddress ? `${walletAddress.slice(0, 4)}...${walletAddress.slice(-4)}` : 'Sign wallet'}
+            buttonText={walletAddress ? 'Disconnect' : 'Connect Wallet'}
             buttonClassName='bg-[#F0F0F0] text-[#010101]'
+            onButtonClick={handleConnectWallet}
           />
           <InputActionRow
             placeholder='Email'

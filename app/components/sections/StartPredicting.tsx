@@ -3,10 +3,9 @@
 import React from 'react'
 import DotGrid from '../ui/DotGrid'
 import CustomButton from '../ui/CustomButton'
-import { useWhitelist } from '../../context/WhitelistContext'
+import { scrollToHome } from '@/app/utils/scrollToWhiteList'
 
 const StartPredicting = () => {
-  const { openWhitelistModal } = useWhitelist()
 
   return (
     <div className='mb-[120px] relative h-[600px] lg:h-[800px] w-full'>
@@ -28,7 +27,7 @@ const StartPredicting = () => {
         <CustomButton
           text="Join Waitlist"
           className='w-[200px] bg-[#F0F0F0] text-[#010101]'
-          onClick={openWhitelistModal}
+          onClick={() => scrollToHome()}
         />
       </div>
     </div>

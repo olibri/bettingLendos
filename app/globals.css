@@ -95,3 +95,71 @@ body {
     background-clip: padding-box, border-box;
   }
 }
+
+/* Solana Wallet Adapter Styles */
+.wallet-adapter-modal-wrapper {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.wallet-adapter-modal {
+  background: #101010 !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 16px !important;
+}
+
+.wallet-adapter-modal-title {
+  color: #F0F0F0 !important;
+  font-family: var(--font-schibsted-grotesk), sans-serif !important;
+}
+
+.wallet-adapter-modal-button-close {
+  background: transparent !important;
+}
+
+.wallet-adapter-modal-button-close:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.wallet-adapter-button {
+  background: #F0F0F0 !important;
+  color: #010101 !important;
+  font-family: var(--font-dm-sans), sans-serif !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.wallet-adapter-button:hover:not([disabled]) {
+  background: #e0e0e0 !important;
+}
+
+.wallet-adapter-button-trigger {
+  background: #F0F0F0 !important;
+  color: #010101 !important;
+}
+
+.wallet-adapter-modal-list {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.wallet-adapter-modal-list li {
+  background: transparent !important;
+  border-radius: 12px !important;
+  margin-bottom: 8px !important;
+  transition: background 0.2s ease !important;
+}
+
+.wallet-adapter-modal-list li:hover {
+  background: rgba(240, 240, 240, 0.05) !important;
+}
+
+.wallet-adapter-modal-list-more {
+  color: #F0F0F0 !important;
+}
+
+.wallet-adapter-modal-list-more:hover {
+  background: rgba(240, 240, 240, 0.05) !important;
+}
+

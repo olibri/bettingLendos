@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://betkalendingbackend-production.up.railway.app';
 
 export interface WhitelistUser {
   id: number;
@@ -20,14 +20,14 @@ export interface CheckResponse {
 }
 
 // Додати юзера до whitelist
-export async function joinWhitelist(email: string, twitter?: string): Promise<WhitelistResponse> {
+export async function joinWhitelist(email: string, wallet_address: string): Promise<WhitelistResponse> {
   try {
     const response = await fetch(`${API_URL}/api/whitelist`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, twitter }),
+      body: JSON.stringify({ email, wallet_address: wallet_address }),
     });
 
     const data = await response.json();
